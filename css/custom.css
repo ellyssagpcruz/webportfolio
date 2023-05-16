@@ -9,10 +9,14 @@
 body {
 	font-family: "Work Sans", sans-serif;
 }
+nav {
+	box-shadow: 0px 0px 3px 0px #888888;
+	z-index: 1;
+}
 #nav-name, #navbarItems {
 	font-family: "Azeret Mono", monospace;
 }
-#bg-image {
+#landing {
 	background-image: url("../images/landing.jpg");
 	background-repeat: no-repeat;
 	min-height: 95vh;
@@ -24,6 +28,9 @@ body {
 	color: indianred;
 	text-align: center;
 	font-size: 60px;
+}
+#myNav {
+	z-index: 1;
 }
 .front-bg > a {
 	text-decoration: none;
@@ -38,6 +45,7 @@ body {
 	display: block;
 	position: relative;
 	height: 50vh;
+	z-index: 2;
 }
 .landing-title {
 	font-weight: bolder;
