@@ -1,57 +1,48 @@
-/* css reset */ 
+/* css reset */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* main content */
+/* ============================= */
+
+/* main css */
 body {
-	font-family: "Work Sans", sans-serif;
-}
-nav {
-	box-shadow: 0px 0px 3px 0px #888888;
-	z-index: 1;
-}
-#nav-name, #navbarItems {
 	font-family: "Azeret Mono", monospace;
 }
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
+}
+nav {
+	z-index: 5;
+}
+.nav-link:hover,
+.nav-link.active,
+.active {
+	color: indianred!important;
+	font-weight: bold;
+	transition: 0.4s;
+}
 #landing {
-	background-image: url("../images/landing.jpg");
-	background-repeat: no-repeat;
-	min-height: 95vh;
-	background-size: 100%;
-	background-position: center;
-	z-index: 3;
-}
-#landing-arrow {
-	color: indianred;
-	text-align: center;
-	font-size: 60px;
-}
-#myNav {
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(../images/landing-bg.jpg);
+	overflow: hidden;
 	z-index: 1;
+
+	background-attachment: static;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding-top: 150px;
 }
-.front-bg > a {
-	text-decoration: none;
+#line-footer {
+	width: 100px;
+	border-top: 3px solid ghostwhite;
 }
-.front-bg {
-	background: rgba(255,255,255,.75);
-	height: 95vh;
-	position: relative;
-	color: black;
+#line-sections {
+	border-top: 5px solid indianred;
 }
-.landing-container {
-	display: block;
-	position: relative;
-	height: 50vh;
-	z-index: 2;
-}
-.landing-title {
-	font-weight: bolder;
-	font-size: 5rem;
-}
-.landing-subtitle {
-	font-weight: lighter;
-	font-size: 2.5rem;
+#landing-icon, #about-image {
+    border-width:5px !important;
 }
