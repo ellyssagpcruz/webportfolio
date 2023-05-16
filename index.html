@@ -72,7 +72,7 @@
 <main>
 
 	<!-- Landing Section -->
-	<section class="jumbotron jumbotron-fluid full-height d-flex align-items-center my-0 text-center" id="landing">
+	<section class="jumbotron jumbotron-fluid full-height d-flex align-items-center my-0 text-center item scrollFade" id="landing">
 		<div class="container" id="landing-content">
 			<img src="./images/landing-icon.jpeg" class="img-fluid border border-danger rounded-circle shadow-lg" width="250px" id="landing-icon">
 
@@ -91,7 +91,7 @@
 	<!-- ========================== -->
 
 	<!-- About Section -->
-	<section class="py-5 bg-white" id="about">
+	<section class="py-5 bg-white item scrollFade" id="about">
 		<div class="container-fluid text-center p-5">
 			<h1 class="font-weight-bold text-responsive">what's up with me?</h1>
 			<hr class="d-block mx-auto w-25 mb-5" id="line-sections">
@@ -117,7 +117,7 @@
 	<!-- ========================== -->
 
 	<!-- Projects Section -->
-	<section class="py-5" id="projects">
+	<section class="py-5 item scrollFade" id="projects">
 		<div class="container-fluid text-center p-5">
 			<h1 class="font-weight-bold text-responsive">my projects (so far?)</h1>
 			<hr class="d-block mx-auto w-25" id="line-sections">
@@ -179,7 +179,7 @@
 	<!-- ========================== -->
 
 	<!-- Tools Section -->
-	<section class="py-5 bg-white" id="tools">
+	<section class="py-5 bg-white item scrollFade" id="tools">
 		<div class="container-fluid text-center p-5">
 			<h1 class="font-weight-bold text-responsive">current full-stack tools used (and to use soon)</h1>
 			<hr class="d-block mx-auto w-25" id="line-sections">
@@ -225,7 +225,7 @@
 	<!-- ========================== -->
 
 	<!-- Contact Section -->
-	<section class="pt-5 mb-3" id="contact">
+	<section class="pt-5 mb-3 item scrollFade" id="contact">
 		<div class="container-fluid p-5">
 			<h1 class="font-weight-bold text-responsive text-center">curious? message me, i don't bite.</h1>
 			<hr class="d-block mx-auto w-25" id="line-sections">
@@ -356,8 +356,8 @@
 
 <!-- Internal Custom JavaScript -->
 <script type="text/javascript" async defer>
-	AOS.init();	
 	
+	// for navigation active
 	let sections = document.querySelectorAll('section');
 	let navLinks = document.querySelectorAll('nav div ul li a');
 
@@ -377,6 +377,7 @@
 		}
 	};
 
+	// for modal checking input 
 	function openModal(){
 		if(document.getElementById('name').value != '' || document.getElementById('email').value != '' || document.getElementById('message').value != ''){
 			$('#contactModal').modal('show');
@@ -387,6 +388,42 @@
 			alert("Hmm. Please input anything on the form please...");
 		}
 	}
+
+	// for animation scroll fade in
+	var fadeElements = document.getElementsByClassName('scrollFade');
+
+	function scrollFade() {
+		var viewportBottom = window.scrollY + window.innerHeight;
+
+		for (var index = 0; index < fadeElements.length; index++) {
+			var element = fadeElements[index];
+			var rect = element.getBoundingClientRect();
+
+			var elementFourth = rect.height/4;
+			var fadeInPoint = window.innerHeight - elementFourth;
+			var fadeOutPoint = -(rect.height/2);
+
+			if (rect.top <= fadeInPoint) {
+				element.classList.add('scrollFade--visible');
+				element.classList.add('scrollFade--animate');
+				element.classList.remove('scrollFade--hidden');
+			} else {
+				element.classList.remove('scrollFade--visible');
+				element.classList.add('scrollFade--hidden');
+			}
+
+			if (rect.top <= fadeOutPoint) {
+				element.classList.remove('scrollFade--visible');
+				element.classList.add('scrollFade--hidden');
+			}
+		}
+	}
+
+	document.addEventListener('scroll', scrollFade);
+	window.addEventListener('resize', scrollFade);
+	document.addEventListener('DOMContentLoaded', function() {
+	    scrollFade();
+	});
 </script>
 <!-- End of Internal Custom JavaScript -->
 
