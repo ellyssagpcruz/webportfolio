@@ -1,0 +1,49 @@
+/* css reset */ 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* main content */
+body {
+	font-family: "Work Sans", sans-serif;
+}
+#nav-name, #navbarItems {
+	font-family: "Azeret Mono", monospace;
+}
+#bg-image {
+	background-image: url("../images/landing.jpg");
+	background-repeat: no-repeat;
+	min-height: 95vh;
+	background-size: 100%;
+	background-position: center;
+	z-index: 3;
+}
+#landing-arrow {
+	color: indianred;
+	text-align: center;
+	font-size: 60px;
+}
+.front-bg > a {
+	text-decoration: none;
+}
+.front-bg {
+	background: rgba(255,255,255,.75);
+	height: 95vh;
+	position: relative;
+	color: black;
+}
+.landing-container {
+	display: block;
+	position: relative;
+	height: 50vh;
+}
+.landing-title {
+	font-weight: bolder;
+	font-size: 5rem;
+}
+.landing-subtitle {
+	font-weight: lighter;
+	font-size: 2.5rem;
+}
