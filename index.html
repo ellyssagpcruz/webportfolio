@@ -72,7 +72,7 @@
 <main class="">
 
 	<!-- Landing Section -->
-	<section class="jumbotron jumbotron-fluid full-height d-flex align-items-center my-0 text-center item scrollFade" id="landing">
+	<section class="jumbotron jumbotron-fluid full-height d-flex align-items-center my-0 text-center item reveal" id="landing">
 		<div class="container" id="landing-content">
 			<img src="./images/landing-icon.jpeg" class="img-fluid border border-danger rounded-circle shadow-lg" width="250px" id="landing-icon">
 
@@ -91,7 +91,7 @@
 	<!-- ========================== -->
 
 	<!-- About Section -->
-	<section class="py-5 bg-white item scrollFade" id="about">
+	<section class="py-5 bg-white item reveal" id="about">
 		<div class="container-fluid text-center p-5">
 			<h1 class="font-weight-bold text-responsive">what's up with me?</h1>
 			<hr class="d-block mx-auto w-25 mb-5" id="line-sections">
@@ -104,7 +104,7 @@
 					<p class="lead">"hope is passion for what is possible" ~s.k.</p>
 					<p class="lead">aspiring web developer and music producer</p>
 					<p class="lead">
-						visit my <a href="https://cruzellyssa.carrd.co" class="text-danger" id="link-underline">online resume</a>
+						visit my <a href="https://ellyssagpcruz.carrd.co" class="text-danger" id="link-underline">online resume</a>
 					</p>
 				</div>
 				<div class="col-sm-12 col-lg-6 order-first order-lg-2 text-center">
@@ -120,7 +120,7 @@
 	<!-- ========================== -->
 
 	<!-- Projects Section -->
-	<section class="py-5 item scrollFade" id="projects">
+	<section class="py-5 item reveal" id="projects">
 		<div class="container-fluid text-center p-5">
 			<h1 class="font-weight-bold text-responsive">my projects (so far?)</h1>
 			<hr class="d-block mx-auto w-25" id="line-sections">
@@ -184,7 +184,7 @@
 	<!-- ========================== -->
 
 	<!-- Tools Section -->
-	<section class="py-5 bg-white item scrollFade" id="tools">
+	<section class="py-5 bg-white item reveal" id="tools">
 		<div class="container-fluid text-center p-5">
 			<h1 class="font-weight-bold text-responsive">current full-stack tools used (and to use soon)</h1>
 			<hr class="d-block mx-auto w-25" id="line-sections">
@@ -239,7 +239,7 @@
 	<!-- ========================== -->
 
 	<!-- Contact Section -->
-	<section class="pt-5 mb-3 item scrollFade" id="contact">
+	<section class="pt-5 mb-3 item reveal" id="contact">
 		<div class="container p-5">
 			<h1 class="font-weight-bold text-responsive text-center">curious? message me, i don't bite.</h1>
 			<hr class="d-block mx-auto w-25" id="line-sections">
@@ -404,6 +404,7 @@
 	}
 
 	// for animation scroll fade in
+	/*
 	var fadeElements = document.getElementsByClassName('scrollFade');
 
 	function scrollFade() {
@@ -438,6 +439,26 @@
 	document.addEventListener('DOMContentLoaded', function() {
 	    scrollFade();
 	});
+	*/
+
+	//for animation scroll reveal
+	function reveal() {
+	  var reveals = document.querySelectorAll(".reveal");
+
+	  for (var i = 0; i < reveals.length; i++) {
+	    var windowHeight = window.innerHeight;
+	    var elementTop = reveals[i].getBoundingClientRect().top;
+	    var elementVisible = 150;
+
+	    if (elementTop < windowHeight - elementVisible) {
+	      reveals[i].classList.add("focus");
+	    } else {
+	      reveals[i].classList.remove("focus");
+	    }
+	  }
+	}
+
+	window.addEventListener("scroll", reveal);
 </script>
 <!-- End of Internal Custom JavaScript -->
 

@@ -72,7 +72,7 @@ nav {
 }
 .scrollFade--hidden {
   opacity: 0;
-  pointer-events: none;
+  pointer-events: all;
 }
 .scrollFade--visible {
   opacity: 1;
@@ -82,3 +82,13 @@ nav {
   transition: opacity 0.2s ease-in-out;
 }
 */
+.reveal{
+  position: relative;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.focus{
+  transform: translateY(0);
+  opacity: 1;
+}
