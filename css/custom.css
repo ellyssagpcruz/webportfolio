@@ -62,6 +62,7 @@ nav {
 }
 
 /* animation scroll */
+/*
 .scrollFade {
   opacity: 1;
   pointer-events: all;
@@ -75,5 +76,6 @@ nav {
   pointer-events: all;
 }
 .scrollFade--animate {
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
+*/
