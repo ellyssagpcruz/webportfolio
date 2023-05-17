@@ -60,6 +60,9 @@ nav {
 	color: indianred!important;
 	text-decoration: underline;
 }
+#link-underline {
+	text-decoration: underline;
+}
 
 /* animation scroll */
 /*
